@@ -54,6 +54,8 @@ EMAIL = gets.chomp
 puts 'Enter password!'
 PASSWORD = $stdin.noecho(&:gets).chomp
 
+puts 'Logging in on Strava'
+
 loop do
   response = HTTParty.get(
     "https://www.strava.com/api/v3/athlete/activities?after=#{FROM_DATE}&before=#{TO_DATE}&page=#{page}&per_page=100",
